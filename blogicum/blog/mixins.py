@@ -8,6 +8,10 @@ PAGE_PAGINATOR = 10
 
 
 class CustomListMixin:
+    """
+    Миксин для представлений, предоставляющий функциональность 
+    получения списка публикаций (Post) с пагинацией.
+    """
     model = Post
     paginate_by = PAGE_PAGINATOR
 
@@ -22,6 +26,10 @@ class CustomListMixin:
 
 
 class PostChangeMixin:
+    """
+    Миксин для представлений, предоставляющий функциональность 
+    изменения публикаций (Post).
+    """
     model = Post
     template_name = 'blog/create.html'
     pk_url_kwarg = 'post_id'
@@ -38,6 +46,10 @@ class PostChangeMixin:
 
 
 class CommentChangeMixin:
+    """
+    Миксин для представлений, предоставляющий функциональность 
+    изменения комментариев (Comment).
+    """
     model = Comment
     template_name = 'blog/comment.html'
     pk_url_kwarg = 'comment_id'

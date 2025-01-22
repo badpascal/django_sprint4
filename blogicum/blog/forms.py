@@ -1,8 +1,11 @@
 from django import forms
-from blog.models import Comment, Post, User
+from blog.models import Comment, Post, User, Location, Category
 
 
 class PostForm(forms.ModelForm):
+    """
+    Форма для создания или редактирования публикации (Post).
+    """
 
     class Meta:
         model = Post
@@ -14,6 +17,9 @@ class PostForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Форма для создания или редактирования комментария (Comment).
+    """
 
     class Meta:
         model = Comment
@@ -24,6 +30,10 @@ class CommentForm(forms.ModelForm):
 
 
 class UserForm(forms.ModelForm):
+    """
+    Форма для создания или редактирования пользователя (User).
+    """
+    
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email',)

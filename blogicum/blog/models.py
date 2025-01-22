@@ -9,6 +9,7 @@ LIMIT_FOR_COMMENT_TITLE = 20
 
 
 class Location(PublishedModel):
+    """Модель, представляющая местоположение."""
     name = models.CharField(
         max_length=256,
         verbose_name='Название места'
@@ -23,6 +24,7 @@ class Location(PublishedModel):
 
 
 class Category(PublishedModel):
+    """Модель, представляющая категорию публикаций."""
     title = models.CharField(
         max_length=256,
         verbose_name='Заголовок',
@@ -46,6 +48,7 @@ class Category(PublishedModel):
 
 
 class Post(PublishedModel):
+    """Модель, представляющая публикацию."""
     title = models.CharField(
         max_length=256,
         verbose_name='Заголовок',
@@ -95,6 +98,7 @@ class Post(PublishedModel):
 
 
 class Comment(PublishedModel):
+    """Модель, представляющая комментарий к публикации."""
     text = models.TextField('Комментарий')
     post = models.ForeignKey(
         Post,

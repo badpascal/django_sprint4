@@ -7,6 +7,9 @@ TEXT = 'Описание публикации.'
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    """
+    Административный интерфейс для управления публикациями (Post).
+    """
     list_display = (
         'title',
         'text',
@@ -37,12 +40,18 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class PostInline(admin.TabularInline):
+    """
+    Встраиваемая форма для отображения публикаций (Post) в других моделях.
+    """
     model = Post
     extra = 0
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    """
+    Административный интерфейс для управления категориями (Category).
+    """
     inlines = (
         PostInline,
     )
@@ -58,6 +67,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
+    """
+    Административный интерфейс для управления локациями (Location).
+    """
     inlines = (
         PostInline,
     )
@@ -70,6 +82,9 @@ class LocationAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    """
+    Административный интерфейс для управления комментариями (Comment).
+    """
     list_display = (
         'text',
         'author',
